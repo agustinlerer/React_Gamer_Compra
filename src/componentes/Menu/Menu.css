@@ -1,0 +1,31 @@
+.header {
+    display: flex;
+    background-color: #141414;
+    font-family: 'Times New Roman', Times, serif;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 5rem;
+}
+.titulo{
+ padding-left: 2rem;
+ font-size: 1.5rem;
+}
+.navegacion {
+    display: flex;
+    padding: 2rem;
+    border-radius: 0.5rem; }
+   
+.navegacion__lista {
+    display: flex; 
+    list-style-type: none; 
+}
+
+.navegacion__barra {
+    padding: 1rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.2rem; 
+}

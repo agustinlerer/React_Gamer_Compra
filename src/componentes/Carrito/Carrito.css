@@ -1,0 +1,9 @@
+.carrito {
+    display: flex;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    margin-left: 6rem;
+    background-position: left;
+    background-size: 70%;
+    background-image: url(./imagenes/pngwing.com.png); }
