@@ -1,6 +1,6 @@
-import Carrito from "../Carrito/Carrito"
-import './Menu.css'
-function Menu(){
+import CartWidget from "../CartWidget/CartWidget"
+import './Navbar.css'
+function Navbar(){
   return (
     <header className="header"> 
     <div className="titulo">
@@ -13,7 +13,7 @@ function Menu(){
            <li className="navegacion__barra"><a href="">Item C</a></li>
         </ul>
       </nav> 
-      <Carrito/> 
+      <CartWidget/> 
     </header>
    
   )
@@ -21,4 +21,4 @@ function Menu(){
   
    
 }
-export default Menu
+export default Navbar

@@ -1,10 +1,10 @@
-import './Carrito.css'
+import './CartWidget.css'
 
 
-function Carrito() {
+function CartWidget() {
     return (
       <div > 
       <a className='carrito' href=" "></a></div>
     )
   }
-  export default Carrito
+  export default CartWidget

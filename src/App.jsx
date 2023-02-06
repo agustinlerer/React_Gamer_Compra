@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import Menu from './componentes/Menu/Menu'
+import Navbar from './componentes/Navbar/Navbar'
 import Contenedor from './componentes/Contenedor/Contenedor'
 
 import './App.css'
@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <Menu/>
+      <Navbar/>
       
       <Contenedor saludo= "hola soy una pagina"/>
     </>
