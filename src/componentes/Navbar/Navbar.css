@@ -9,10 +9,11 @@
     top: 0;
     left: 0;
     height: 5rem;
+    z-index: 100;
 }
 .titulo{
  padding-left: 2rem;
- font-size: 1.5rem;
+ font-size: 1rem;
 }
 .navegacion {
     display: flex;

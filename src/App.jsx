@@ -1,7 +1,10 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './componentes/Navbar/Navbar'
-import Contenedor from './componentes/Contenedor/Contenedor'
+import Itemlistcontainer from './componentes/Itemlistcontainer/Itemlistcontainer'
+import Itemdetailcontainer from './componentes/Itemdetailcontainer/Itemdetailcontainer'
+
 
 import './App.css'
 
@@ -11,11 +14,21 @@ import './App.css'
 function App() {
 
   return (
-    <>
+    <div>
+    <BrowserRouter>
       <Navbar/>
+      <Routes>  
+        <Route path='/' element = {<Itemlistcontainer />}/>
+        <Route path='/categoria/:idCategoria' element = { <Itemlistcontainer/>} />
+        <Route path = '/detalle/:namepokemon' element = {<Itemdetailcontainer/>} />
       
-      <Contenedor saludo= "hola soy una pagina"/>
-    </>
+    </Routes>  
+      
+    
+    
+    
+    </BrowserRouter>
+    </div>
   )
 }
 
