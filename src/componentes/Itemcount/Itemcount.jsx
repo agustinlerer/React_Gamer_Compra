@@ -19,7 +19,7 @@ function Counter() {
 
   return (
     <div>
-      <p>Cantidad en el contador: {count}</p>
+      <p>Cantidad en el carrito: {count}</p>
       <button onClick={handleAdd}>Agregar</button>
       <button onClick={handleSubtract}>Restar</button>
       <button onClick={handlePurchase}>Comprar</button>

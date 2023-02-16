@@ -14,7 +14,7 @@ import './App.css'
 function App() {
 
   return (
-    <div>
+    <div >
     <BrowserRouter>
       <Navbar/>
       <Routes>  

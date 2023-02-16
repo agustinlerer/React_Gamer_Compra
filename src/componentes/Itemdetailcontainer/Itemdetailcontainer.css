@@ -1,0 +1,29 @@
+.Detalle{
+    min-height: calc(100vh - 10vh - 8vh);
+    
+    display: flex;
+    justify-items: center;
+    align-items: center;
+ 
+    
+        
+}
+.informacion{
+    color: rgb(252, 252, 252);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.textodetalle{
+    font-size: 1.5rem;
+}
+.imagendetalle {
+    background-color: white;
+    width: 100%;
+    border-style: solid;
+    border-color:rgb(9, 48, 156);
+    border-width: 5px;
+    border-radius: 20px;
+    position: relative;
+    right: 5rem;
+    
+
+} 

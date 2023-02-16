@@ -1,0 +1,16 @@
+.items{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin: 1%;
+    margin-left: 6%;
+    background-color: rgb(71, 71, 71);
+}
+.texto{
+    color: white;
+}
+.boton{
+    border-color: white;
+    border-style: solid;
+    border-radius: 1rem;
+}

@@ -1,0 +1,8 @@
+.Detalle{
+    min-height: calc(100vh - 10vh - 8vh);
+    display: grid;
+    grid-template-columns: repeat(2,50%);
+}
+.imagendetalle{
+
+}

@@ -12,21 +12,29 @@
     z-index: 100;
 }
 .titulo{
- padding-left: 2rem;
- font-size: 1rem;
+    margin-left: 2rem ;
+    font-size: 1rem;
 }
 .navegacion {
     display: flex;
-    padding: 2rem;
-    border-radius: 0.5rem; }
+    justify-items: center;
+  
+    border-radius: 0.5rem; 
+   
+}
    
 .navegacion__lista {
     display: flex; 
+    justify-items: center;    
+    align-items: center;
     list-style-type: none; 
+    margin-right: 6rem;
 }
 
 .navegacion__barra {
     padding: 1rem;
     font-size: 1.5rem;
     padding-bottom: 0.2rem; 
+    
+
 }
