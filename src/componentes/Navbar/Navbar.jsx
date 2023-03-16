@@ -20,9 +20,15 @@ function Navbar(){
             <li className="navegacion__barra">
             <NavLink to = '/categoria/pociones'> Pociones</NavLink>
             </li>
+            <li className="navegacion__barra">
+            <NavLink to = '/Ordenes'> Ordenes</NavLink>
+            </li>
         </ul>
       </nav> 
-      <CartWidget/> 
+      <NavLink to= '/cart'>
+        <CartWidget/> 
+      </NavLink>
+      
     </header>
    
   )

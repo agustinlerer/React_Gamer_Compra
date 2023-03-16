@@ -10,7 +10,7 @@ function Item ({pokemon}){
       
        
         <div className="card-footer texto ">
-          <Link to={`/detalle/${pokemon.name}`}>
+          <Link to={`/detalle/${pokemon.id}`}>
             <button className="btn boton w-100 texto">Detalle</button>
           </Link>
         </div>

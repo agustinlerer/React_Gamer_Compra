@@ -1,19 +1,40 @@
 import { useState ,useEffect } from "react"
 import { useParams } from "react-router-dom"
-import { gFetch } from "../../gFetch/gFetch"
+import { collection, getDoc, getDocs, getFirestore, query, where,doc,orderBy } from 'firebase/firestore'
+
+import { useCartContext } from "../CartContext/CartContext"
+import { NavLink } from "react-router-dom"
 import Itemcount from "../Itemcount/Itemcount"
 import './Itemdetailcontainer.css'
 
 
 
 function Itemdetailcontainer (){
+    const { agregarCart } = useCartContext()
     const [pokemons, setPokemons] = useState([])
+    const [count, setCount]= useState(0)
     const { namepokemon}= useParams()
-    console.log(namepokemon)
+    
     useEffect(()=>{
-        gFetch(namepokemon)
-        .then(resp => setPokemons(resp))
+        const db = getFirestore()
+        const queryDoc = doc(db, 'pokemones', namepokemon)
+        getDoc(queryDoc)
+        .then(respProd => setPokemons(  { id: respProd.id, ...respProd.data() }  ))
+        .catch(err => console.error(err))
+     
+
     },[])
+    console.log(pokemons)
+    
+    
+    function onAdd(cantidad){
+        setCount(cantidad)
+        agregarCart( { ...pokemons, cantidad } )
+    }
+
+
+
+
 
     console.log(pokemons)
     return(
@@ -26,8 +47,12 @@ function Itemdetailcontainer (){
                 <h2>{pokemons.name} </h2>
                 <p className="textodetalle">{pokemons.decrpcion}</p>
                 <p className="textodetalle">precio: {pokemons.precio}</p>
-
-                <p className="contador"><Itemcount/></p>
+                {
+                count===0?
+                (<p className="contador"><Itemcount onAdd={onAdd}/></p>)
+                :( <NavLink to = '/cart'> <button >Finalizar Comprar</button></NavLink>  )
+                }
+                
             </div>
             </article>
           

@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-function Counter() {
-  const [count, setCount] = useState(0);
+function Counter({onAdd}) {
+  const [count, setCount] = useState(1);
 
   const handleAdd = () => {
     setCount(count + 1);
   };
 
   const handleSubtract = () => {
-    if (count > 0) {
+    if (count > 1) {
         setCount(count - 1);
       }
   };
@@ -22,7 +22,7 @@ function Counter() {
       <p>Cantidad en el carrito: {count}</p>
       <button onClick={handleAdd}>Agregar</button>
       <button onClick={handleSubtract}>Restar</button>
-      <button onClick={handlePurchase}>Comprar</button>
+      <button onClick={()=>onAdd(count)}>Comprar</button>
     </div>
   );
 }
