@@ -3,11 +3,11 @@ import './CartWidget.css'
 
 
 function CartWidget() {
-  const { cartList, vaciarCarrito } = useCartContext()
+  const { cartList, totalProducts} = useCartContext()
     return (
       <div > 
-       <a>{cartList.length}</a> 
-      <a className='carrito' ></a>
+       <a>{totalProducts()}</a> 
+      <a className='cart' ></a>
       </div>
     )
   }

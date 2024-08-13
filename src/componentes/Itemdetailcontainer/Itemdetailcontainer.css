@@ -1,4 +1,4 @@
-.Detalle{
+.Detail{
     min-height: calc(100vh - 10vh - 8vh);
     
     display: flex;
@@ -8,14 +8,14 @@
     
         
 }
-.informacion{
+.info{
     color: rgb(252, 252, 252);
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-.textodetalle{
+.textdetail{
     font-size: 1.5rem;
 }
-.imagendetalle {
+.imagdetail {
     background-color: white;
     width: 100%;
     border-style: solid;
@@ -26,3 +26,7 @@
     
 
 } 
+
+.capitalize-first-letter::first-letter {
+    text-transform: uppercase;
+}

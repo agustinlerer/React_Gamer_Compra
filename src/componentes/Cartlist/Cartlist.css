@@ -1,39 +1,37 @@
-.carritocontenedor{
-    display: grid; 
-    grid-template-columns: 1fr 2fr ; 
-    grid-template-rows: auto; 
-    gap: 00% 1em; 
-
-    
- 
+.containerCartList {
+    display: grid;
+    grid-template-columns: 1fr 3fr auto; /* Tres columnas: imagen, detalles, botón */
+    grid-template-rows: auto;
+    gap: 1rem;
     padding-bottom: 5%;
-    
+    align-items: center; /* Alinea verticalmente todos los elementos */
 }
-.imagencart{
+
+.imgcart {
     background-color: white;
     width: 10vw;
     border-style: solid;
-    border-color:rgb(9, 48, 156);
+    border-color:red;
     border-width: 5px;
     border-radius: 20px;
-  
 }
-.imagencart img{
+
+.imgcart img {
     width: 100%;
     height: 100%;
 }
-.contenedordetellas{
+
+.containerdetails {
     width: 100%;
     border-radius: 20px;
     padding: 6%;
-    background-color: blue;
+    background-color: rgb(253, 253, 253);
 }
-.textocarrito{
+
+.textcart {
     padding-top: 5%;
     font-size: 1rem;
-    color: aquamarine;
-   
+    color: rgb(0, 0, 0);
 }
-.textocarritovacio{
-    color: white;
-}
+
+

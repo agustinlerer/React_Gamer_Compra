@@ -1,27 +1,25 @@
 import { useCartContext } from "../CartContext/CartContext"
-
-
+import "./Cartcontanier.css"
 import { NavLink } from "react-router-dom"
-import './Cartcontanier.css'
 import Cartlist from "../Cartlist/Cartlist"
-import Formulario from "../Formulario/Formulario"
+import Form from "../Form/Form"
 const Cartcontanier =( ) => {
     const { cartList} = useCartContext()
     
     
     if(cartList.length>0){
       return (
-      <div>
+      <div className="cartContainer" >
         <Cartlist/> 
-        <Formulario/>
+        <Form/>
       </div>
     )}
     else{
       return(
         <div>
-          <h1 className="textocarritovacio">Su carrito esta vacio...</h1>
+          <h1 className="textempty">Su carrito esta vacio...</h1>
           <NavLink to='/'> 
-            <button>LLenelo con algo </button>
+            <button className="buttonCart">LLenelo con algo </button>
           </NavLink>
         </div>
         

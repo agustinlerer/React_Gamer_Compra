@@ -1,0 +1,14 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten a la siguiente línea si no caben en la misma fila */
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    align-items: center; /* Centra las tarjetas verticalmente si es necesario */
+    margin: 0 auto; /* Asegura que el contenedor esté centrado si tiene un ancho máximo */
+}
+
+
+.buttonOrders{
+    margin-top: 8px;
+    background-color: white;
+}
