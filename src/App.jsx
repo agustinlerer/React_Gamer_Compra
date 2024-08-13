@@ -8,7 +8,7 @@ import Cartcontanier from './componentes/Cartcontanier/Cartcontanier'
 
 import './App.css'
 import { CartContextProvider } from './componentes/CartContext/CartContext';
-import Ordenes from './componentes/Ordenes/Ordenes';
+import Orders from './componentes/Orders/Orders';
 
 
 
@@ -22,10 +22,10 @@ function App() {
         <Navbar/>
         <Routes>  
           <Route path='/' element = {<Itemlistcontainer />}/>
-          <Route path='/categoria/:idCategoria' element = { <Itemlistcontainer/>} />
-          <Route path = '/detalle/:namepokemon' element = {<Itemdetailcontainer/>} />
+          <Route path='/category/:idCategory' element = { <Itemlistcontainer/>} />
+          <Route path = '/detail/:namepokemon' element = {<Itemdetailcontainer/>} />
           <Route path='/cart' element={<Cartcontanier/>}/>
-          <Route path='/Ordenes' element= {<Ordenes/>}/>
+          <Route path='/Orders' element= {<Orders/>}/>
         </Routes>  
       </CartContextProvider>
     </BrowserRouter>

@@ -1,28 +1,28 @@
 import { collection, getFirestore, addDoc, getDocs, query, where } from 'firebase/firestore'
 import {  useState } from 'react'
 import Swal from 'sweetalert2'
-import './Ordenes.css'
-const Ordenes = () => {
-    const [ordenes, setOrdenes] = useState([]);
-    const [buscador, setBuscador] = useState({ email: '' });
+import './Orders.css'
+const orders = () => {
+    const [orders, setOrders] = useState([]);
+    const [seeker, setSeeker] = useState({ email: '' });
   
-    const Busacadorchange = (event) => {
-      setBuscador({
-        ...buscador,
+    const seekerChange = (event) => {
+      setSeeker({
+        ...seeker,
         [event.target.name]: event.target.value,
       });
     };
   
-    const buscarOrdenes = (event) => {
+    const searchOrders = (event) => {
       event.preventDefault();
       const db = getFirestore();
       const queryCollection = collection(db, 'ordenes');
-      const queryFilter = query(queryCollection, where('comprador.email', '==', buscador.email));
+      const queryFilter = query(queryCollection, where('comprador.email', '==', seeker.email));
   
       getDocs(queryFilter)
         .then((respCollection) =>
         {if(respCollection.docs.length>0){
-            setOrdenes(
+            setOrders(
             respCollection.docs.map((prod) => {
               return {
                 id: prod.id,
@@ -36,57 +36,60 @@ const Ordenes = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'No se encontraron órdenes',
-                text: `No se encontraron órdenes para el correo electrónico ${buscador.email}`,
+                text: `No se encontraron órdenes para el correo electrónico ${seeker.email}`,
               });
-            setBuscador({email:''})
+            setSeeker({email:''})
           }}
           
         )
         .catch((err) => console.log(err));
     };
   
-    const vaciarOrdenes = () => {
-      setOrdenes([]);
-      setBuscador({ email: '' });
+    const vaciarorders = () => {
+      setOrders([]);
+      setSeeker({ email: '' });
     };
   
     return (
-      <div>
-        {ordenes.length > 0 ? (
-          <>
-            
-            {ordenes.map((orden) => (
-              <div key={orden.id} className="card">
+      <>
+        {orders.length > 0 ? (
+          <section>
+            <div className='cards-container'>
+               {orders.map((orden) => (
+
+              <div key={orden.id} className="card ">
                 <div className="card-body">
                   <h5 className="card-title">Orden {orden.id}</h5>
-                  <p className="card-text">Comprador: {orden.comprador.nombre}</p>
+                  <p className="card-text">Comprador: {orden.comprador.name}</p>
                   <p className="card-text">Email: {orden.email}</p>
                   <p className="card-text">Total: ${orden.precioTotal}</p>
                 </div>
               </div>
             ))}
-            <button onClick={vaciarOrdenes}>voler al buscador</button>
-          </>
+            </div>
+           
+            <button className='buttonOrders' onClick={vaciarorders}>voler al buscador</button>
+          </section>
         ) : (
-          <form className="form-group" onSubmit={buscarOrdenes}>
+          <form className="form-group" onSubmit={searchOrders}>
             <input
               className="form-control"
               type="text"
               name="email"
-              onChange={Busacadorchange}
-              value={buscador.email}
+              onChange={seekerChange}
+              value={seeker.email}
               placeholder="Ingrese su email"
               required
             />
-            <button>Buscar</button>
+            <button className='buttonOrders'>Buscar</button>
           </form>
           
         
         )}
-      </div>
+      </>
     );
   };
   
-  export default Ordenes;
+  export default orders;
   
   

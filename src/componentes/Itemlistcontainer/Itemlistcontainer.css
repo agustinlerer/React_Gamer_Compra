@@ -1,0 +1,13 @@
+.Loading{
+    color: white;
+}
+
+.style-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.style-cards img {
+    width: 100%;
+    height: auto;
+}

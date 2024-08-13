@@ -1,0 +1,27 @@
+.Form{
+    margin-top: 10px;
+}
+
+
+.Border {
+    background-color:white ;
+    border-radius: 10px;
+    border: 0.2rem solid darkred; /* Definir color, ancho y estilo del borde */
+}
+
+
+.buttonCartform{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-self: start; 
+    background-color: darkred; 
+    color: rgb(255, 255, 255); 
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s; }
+
+.buttonCartform:hover {
+    background-color: rgb(0, 0, 0);
+    color:darkred;
+}

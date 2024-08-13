@@ -10,7 +10,7 @@ import './Itemdetailcontainer.css'
 
 
 function Itemdetailcontainer (){
-    const { agregarCart } = useCartContext()
+    const { addCart } = useCartContext()
     const [pokemons, setPokemons] = useState([])
     const [count, setCount]= useState(0)
     const { namepokemon}= useParams()
@@ -24,29 +24,24 @@ function Itemdetailcontainer (){
      
 
     },[])
-    console.log(pokemons)
     
-    
-    function onAdd(cantidad){
-        setCount(cantidad)
-        agregarCart( { ...pokemons, cantidad } )
+    function onAdd(count){
+        setCount(count)
+        addCart( { ...pokemons, count } )
     }
 
 
 
-
-
-    console.log(pokemons)
     return(
-        <div className="container-fluid Detalle" >
+        <div className="container-fluid Detail" >
             <article className="row ">
                   <div className="col-sm-12 col-md-6 col-lg-6 ">         
-                <img className="imagendetalle" src={pokemons.imagen}alt={pokemons.name}/>
+                <img className="imagdetail" src={pokemons.imagen}alt={pokemons.name}/>
             </div>
-            <div className="col-sm-12 col-md-6 col-lg-6 align-self-center informacion" >
+            <div className="col-sm-12 col-md-6 col-lg-6 align-self-center info capitalize-first-letter" >
                 <h2>{pokemons.name} </h2>
-                <p className="textodetalle">{pokemons.decrpcion}</p>
-                <p className="textodetalle">precio: {pokemons.precio}</p>
+                <p className="textdetail">{pokemons.decrpcion}</p>
+                <p className="textdetail">precio: {pokemons.precio}</p>
                 {
                 count===0?
                 (<p className="contador"><Itemcount onAdd={onAdd}/></p>)

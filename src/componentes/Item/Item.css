@@ -6,11 +6,18 @@
     margin-left: 6%;
     background-color: rgb(71, 71, 71);
 }
-.texto{
+.card-header{
     color: white;
 }
-.boton{
-    border-color: white;
-    border-style: solid;
-    border-radius: 1rem;
+.card-header::first-letter {
+    text-transform: uppercase;
+}
+.button{
+    background-color: transparent;
+    color: white;
+}
+.button:hover {
+    background-color: white;
+    color:red;
+    border-color:transparent;
 }

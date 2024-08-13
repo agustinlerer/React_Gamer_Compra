@@ -14,37 +14,38 @@ export const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     // logica de no repetir el product
-    const agregarCart = (producto) => {
-        const productoEnCarrito = cartList.find((item) => item.name === producto.name);
-        if (productoEnCarrito) {
+    const addCart = (product) => {
+        const productEnCarrito = cartList.find((item) => item.name === product.name);
+        if (productEnCarrito) {
           setCartList(
             cartList.map((item) =>
-              item.name === producto.name
-                ? { ...item, cantidad: item.cantidad + producto.cantidad }
+              item.name === product.name
+                ? { ...item, count: item.count + product.count }
                 : item
             )
           );
         } else {
-          setCartList([...cartList, producto ]);
+          setCartList([...cartList, product ]);
           
         }
-        console.log(cartList)
       };
       
-    const precioTotal = () => cartList.reduce( (count, producto) => count += (producto.cantidad*producto.precio), 0)
-    const eliminarProducto = (name) => setCartList(cartList.filter(producto => producto.name !== name))
+    const totalPrice = () => cartList.reduce( (count, product) => count += (product.count*product.precio), 0)
+    const totalProducts = () => cartList.reduce((count, product) => count += (product.count),0)
+    const removeProduct = (name) => setCartList(cartList.filter(product => product.name !== name))
 
-    const vaciarCarrito = () =>{
+    const emptyCart = () =>{
         setCartList([])
     }
  
     return (
         <CartContext.Provider value={{
             cartList, 
-            agregarCart,
-            vaciarCarrito,
-            precioTotal,
-            eliminarProducto
+            addCart,
+            emptyCart,
+            totalPrice,
+            removeProduct,
+            totalProducts
         }}>
             {children}
         </CartContext.Provider>

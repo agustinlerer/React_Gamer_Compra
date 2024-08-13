@@ -11,19 +11,13 @@
     height: 5rem;
     z-index: 100;
 }
-.titulo{
+.title{
     margin-left: 2rem ;
     font-size: 1rem;
 }
-.navegacion {
-    display: flex;
-    justify-items: center;
-  
-    border-radius: 0.5rem; 
+
    
-}
-   
-.navegacion__lista {
+.Nav-List {
     display: flex; 
     justify-items: center;    
     align-items: center;
@@ -31,7 +25,7 @@
     margin-right: 6rem;
 }
 
-.navegacion__barra {
+.Nav-bar {
     padding: 1rem;
     font-size: 1.5rem;
     padding-bottom: 0.2rem; 

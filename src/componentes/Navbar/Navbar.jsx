@@ -4,24 +4,24 @@ import './Navbar.css'
 function Navbar(){
   return (
     <header className="header"> 
-    <div className="titulo">
+    <div className="title">
       <h1>
         <NavLink to = '/' >Pokecompra</NavLink>
       </h1>
     </div>
-      <nav className="navegacion">
-        <ul className="navegacion__lista">
-          <li className="navegacion__barra">
-            <NavLink to = '/categoria/pokemon'> Pokemones</NavLink>
+      <nav >
+        <ul className="Nav-List">
+          <li className="Nav-bar">
+            <NavLink to = '/category/pokemon'> Pokemones</NavLink>
             </li>
-            <li className="navegacion__barra">
-            <NavLink to = '/categoria/pokeballs'> Pokeballs</NavLink>
+            <li className="Nav-bar">
+            <NavLink to = '/category/pokeballs'> Pokeballs</NavLink>
             </li>
-            <li className="navegacion__barra">
-            <NavLink to = '/categoria/pociones'> Pociones</NavLink>
+            <li className="Nav-bar">
+            <NavLink to = '/category/pociones'> Pociones</NavLink>
             </li>
-            <li className="navegacion__barra">
-            <NavLink to = '/Ordenes'> Ordenes</NavLink>
+            <li className="Nav-bar">
+            <NavLink to = '/Orders'> Ordenes</NavLink>
             </li>
         </ul>
       </nav> 
